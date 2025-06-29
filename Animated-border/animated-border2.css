@@ -1,0 +1,71 @@
+/* Universal selector or Global styling */
+*,
+::before,
+::after {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  text-decoration: none;
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+
+body {
+  background-color: black;
+}
+
+.card-border {
+  margin: 10% auto 0;
+  width: 50%;
+  height: 400px;
+  color: #fff;
+
+  padding: 2rem;
+  background-color: #1c1f2b;
+  text-align: center;
+  border-radius: 10px;
+  position: relative;
+}
+
+.glow::before,
+.glow::after {
+  content: "";
+  position: absolute;
+  left: -2px;
+  top: -2px;
+  background: linear-gradient(
+    45deg,
+    yellow,
+    #ff6600,
+    #00ff66,
+    #00ffff,
+    #ff00ff,
+    #ff0099,
+    #099fff
+  );
+  background-size: 400%;
+  width: calc(100% + 5px);
+  height: calc(100% + 5px);
+  z-index: -1;
+  border-radius: 10px;
+  animation: 20s spinning linear infinite;
+}
+
+@keyframes spinning {
+  0% {
+    background-position: 0 0;
+  }
+  50% {
+    background-position: 400% 0;
+  }
+  100% {
+    background-position: 0 0;
+  }
+}
+
+/* for the blur effect */
+.glow::after {
+  /* filter: blur(44px); */
+  filter: blur(1.5rem);
+  opacity: 0.5;
+}

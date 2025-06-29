@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Movie Information website</title>
+
+    <!-- fav icon for the title icon -->
+    <link rel="shortcut icon" href="./star-icon.svg" type="image/x-icon" />
+
+    <!-- linked css file -->
+    <link rel="stylesheet" href="./index.css" />
+
+    <!-- External Java Script -->
+    <script defer src="./index.js"></script>
+  </head>
+  <body>
+    <div class="container">
+      <!-- search field -->
+      <div class="search-container">
+        <input
+          type="text"
+          name="movie-name"
+          id="movie-name"
+          placeholder="Enter Movie Name here..."
+          value="Avengers: Endgame"
+        />
+
+        <button id="search-btn">Search</button>
+      </div>
+
+      <!-- Display Result -->
+      <div id="result">
+        <div class="info">
+          <!-- Movie image -->
+          <img src="" class="poster" />
+
+          <!-- Movie description -->
+          <div>
+            <h2 id="Title"></h2>
+            <div class="rating">
+              <img src="star-icon.svg" />
+              <h4 id="imdbRating"></h4>
+            </div>
+
+            <div class="details">
+              <span id="Rated"></span>
+              <span id="Year"></span>
+              <span id="RunTime"></span>
+            </div>
+
+            <div class="genre">
+              <div id="Genre"></div>
+            </div>
+          </div>
+        </div>
+
+        <h3>Plot:</h3>
+        <p id="Plot"></p>
+        <p>Cast</p>
+        <p id="Actors"></p>
+      </div>
+    </div>
+  </body>
+</html>

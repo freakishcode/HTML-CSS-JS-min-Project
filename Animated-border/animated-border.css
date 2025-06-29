@@ -1,0 +1,78 @@
+/* Universal selector or Global styling */
+*,
+::before,
+::after {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  text-decoration: none;
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+
+body {
+  background-color: black;
+}
+
+.card-border {
+  margin: 5rem auto;
+  width: 300px;
+  color: #fff;
+
+  padding: 2rem;
+  background-color: #1c1f2b;
+  text-align: center;
+  border-radius: 10px;
+  position: relative;
+}
+
+/* Note: this is experimental */
+@property --angle {
+  syntax: "<angle>";
+  initial-value: 0deg;
+  inherits: false;
+}
+
+.card-border::after,
+.card-border::before {
+  content: "";
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  /* background: conic-gradient(#ff4545, #00ff99, #006aff, #ff0095, #ff45); */
+  /* background: conic-gradient(from var(--angle), transparent 70%, blue); */
+  background: conic-gradient(
+    from var(--angle),
+    #ff4545,
+    #00ff99,
+    #006aff,
+    #ff0095,
+    #ff4545
+  );
+
+  /* to center the after */
+  top: 50%;
+  left: 50%;
+  translate: -50% -50%;
+  /* to put the after at the back */
+  z-index: -1;
+  /* to make the pseudo element bigger that the main box content  */
+  padding: 9rem 9.5rem;
+  border-radius: 10px;
+  animation: 3s spin linear infinite;
+}
+
+/* for the blur effect */
+.card-border::before {
+  filter: blur(1.5rem);
+  opacity: 0.5;
+}
+
+@keyframes spin {
+  from {
+    --angle: 0deg;
+  }
+  to {
+    --angle: 360deg;
+  }
+}
