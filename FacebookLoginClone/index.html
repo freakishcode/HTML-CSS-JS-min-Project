@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+
+    <!-- Fav-icon: Logo for the web page tittle(Facebook) -->
+    <link rel="shortcut icon" href="./images/fb icon.png" />
+    <title>Facebook</title>
+
+    <!-- EXTERNAL style sheet -->
+    <link rel="stylesheet" href="./style.css" />
+
+    <!-- EXTERNAL Java Script -->
+    <script defer src="./script.js"></script>
+  </head>
+
+  <body>
+    <!-- Login section -->
+    <div class="container Login_wrapper">
+      <!-- Header -->
+      <h1>facebook</h1>
+
+      <form id="Login">
+        <!-- Email or Phone number field -->
+        <input type="text" placeholder="Email or Phone number" required />
+        <!-- Error message to user if password is incorrect -->
+        <p class="message"></p>
+
+        <!-- PASSWORD input field -->
+        <input type="password" placeholder="password" required />
+        <!-- Error message to user if password is incorrect -->
+        <p class="message2"></p>
+
+        <!-- Button submit login form -->
+        <button type="submit" class="submitBtn">Login</button>
+
+        <!-- Link to recover password -->
+        <a href="#" class="forgot-password" id="forgotten">Forget password?</a>
+
+        <!-- Register Btn -->
+        <button type="button" class="create-accountBtn" onclick="showSignup()">
+          Create New Account
+        </button>
+      </form>
+    </div>
+
+    <!-- SignUp section -->
+    <div class="container SignUp_wrapper">
+      <!-- Header -->
+      <h1>SignUp</h1>
+
+      <form id="SignUp">
+        <!-- First Name field -->
+        <input type="text" id="firstName" placeholder="First Name" required />
+        <!-- Error message to user if password is incorrect -->
+        <p class="message3"></p>
+
+        <!-- Last Name field -->
+        <input type="text" id="lastName" placeholder="Last Name" required />
+        <p class="message4"></p>
+
+        <!-- email field -->
+        <input type="email" id="email" placeholder="Email" required />
+        <p class="message5"></p>
+
+        <!-- PASSWORD field -->
+        <input type="password" id="password" placeholder="password" required />
+        <!-- Error message to user if password is incorrect -->
+        <p class="message6"></p>
+
+        <!-- Button submit Register -->
+        <button type="submit" class="submitBtn">Sign Up</button>
+
+        <!-- Register Btn -->
+        <button type="button" class="back-to-loginBtn" onclick="showLogin()">
+          Back to Login
+        </button>
+      </form>
+    </div>
+  </body>
+</html>
